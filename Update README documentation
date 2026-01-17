@@ -1,0 +1,20 @@
+This is an embedded C++ project that simulates a traffic light control system for a road intersection. The project is designed for the ESP32 platform and focuses on clear state management and efficient timing without blocking the microcontroller.
+How It Works
+The system is implemented using a Finite State Machine (FSM).
+Instead of using the delay() function, which blocks program execution, the project relies on the millis() function to measure time. This approach allows the ESP32 to continue running smoothly while controlling the traffic light sequence.
+System States
+CARS_GO – Cars have a green light, pedestrians have a red light
+YELLOW – Yellow light for cars, used as a warning phase
+PED_GO – Pedestrians have a green light, cars have a red light
+SAFETY – All lights are red for a short safety interval before the cycle restarts
+Hardware Requirements
+ESP32 or Arduino-compatible development board
+Three LEDs for traffic lights (red, yellow, green)
+Two LEDs for pedestrian lights (red, green)
+220Ω or 330Ω resistors
+Jumper wires
+Technical Details
+Language: C++ (Arduino Framework)
+Logic Structure: Finite State Machine implemented with a switch-case statement
+Timing Method: Non-blocking timing using millis()
+Pin Configuration: Pins are defined using const int for clarity and safety
